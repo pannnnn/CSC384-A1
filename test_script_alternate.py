@@ -18,7 +18,7 @@ if test_alternate:
   print('Testing alternate heuristic with greedy best-first search')
 
   solved = 0; unsolved = []; benchmark = 0; timebound = 4 #4 second time limit
-  for i in range(0, len(PROBLEMS)):
+  for i in range(0, len(PROBLEMS)): 
     print("*************************************")
     print("PROBLEM {}".format(i))
 
@@ -28,7 +28,7 @@ if test_alternate:
     final = se.search(timebound)
 
     if final:
-      final.print_path()
+    #  final.print_path()
       solved += 1
     else:
       unsolved.append(i)

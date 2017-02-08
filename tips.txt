@@ -1,9 +1,9 @@
-1.
+1. The general idea of the implementation is to reverse the process of pushing the box into the storage.  Every slot has a number associated with it , WALL_NUMBER and THE_OTHER_NUMBER indicate wall and things except for storage point, and set storage point to zero. This is to minimize the steps that take a box to the storage point, and at the same time maximize the cost leading to a dead lock.
 
-2.
+2.  BFS is implemented to find the shortest path for any box to any storage point. Every storage point will do recursive exploration one after the other. Their recurrence times should be synchronized.
 
-3.
+3. The cost is to sum all the number associated with the slot that has been taken by a box. This would give us the heuristic value of how far our state is from the goal.
 
-4.
+4 With restrictions, every box should have its own maps seperated from each other. First individually sum one map as what we do in step 3, then sum all the maps to get the final heuristic value.
 
-5.
+5. Dead Lock can be detected earlier, if possible to avoid further exploration. We can also add some weight into the BFS values calculated from the state, but more considerations need to be taken in order to decide allocation of the weight.
